@@ -18,12 +18,23 @@ final class CountryListViewController: UIViewController {
         }
     }
 
-    var output: CountryListViewControllerOutput?
-
+    private let router: CountryListRouter
     private let searchController = UISearchController(searchResultsController: nil)
     private let tableView = UITableView(frame: .zero, style: .plain)
+    private var output: CountryListViewControllerOutput?
     private var viewModels: [CountryListModel.Obtain.ViewModel.CellViewModel]?
     private var filtredViewModels: [CountryListModel.Obtain.ViewModel.CellViewModel]?
+
+    init(router: CountryListRouter,
+         output: CountryListViewControllerOutput) {
+        self.router = router
+        self.output = output
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +115,10 @@ extension CountryListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+        guard let cellModel = (isFiltering ? filtredViewModels : viewModels)?[indexPath.row] else {
+            return
+        }
+        router.showCountry(cellModel.model)
     }
 
 }

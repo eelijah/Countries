@@ -11,15 +11,19 @@ import UIKit
 final class CountryListAssembly {
 
     func module() -> UIViewController {
+        let presenter = CountryListPresenter()
         let interactor = CountryListInteractor(
             countryRepository: CountryRepositoryImpl(
                 countryApiService: CountryApiServiceImpl()
-            )
+            ),
+            output: presenter
         )
-        let presenter = CountryListPresenter()
-        interactor.output = presenter
-        let view = CountryListViewController(nibName: nil, bundle: nil)
-        view.output = interactor
+        let router = CountryListRouter()
+        let view = CountryListViewController(
+            router: router,
+            output: interactor
+        )
+        router.view = view
         presenter.view = view
         return view
     }

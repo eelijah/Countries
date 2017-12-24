@@ -20,7 +20,8 @@ extension CountryListPresenter: CountryListInteractorOutput {
         let cellModels = response.countries.map { country in
             return CountryListModel.Obtain.ViewModel.CellViewModel(
                 name: country.name,
-                code: country.code
+                code: country.code,
+                model: country
             )
         }
         DispatchQueue.main.async { [weak view] in

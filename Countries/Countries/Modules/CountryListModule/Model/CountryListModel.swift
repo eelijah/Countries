@@ -22,6 +22,7 @@ struct CountryListModel {
             struct CellViewModel {
                 let name: String
                 let code: String
+                let model: Country
             }
 
             var cellModels: [CellViewModel]

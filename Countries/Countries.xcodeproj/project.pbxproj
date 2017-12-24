@@ -30,6 +30,7 @@
 		CF9B7EA01FEEF9EC008DDA2A /* CountryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B7E9F1FEEF9EC008DDA2A /* CountryListAssembly.swift */; };
 		CFFE68B61FEFFE86005EA93D /* CountryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68B51FEFFE86005EA93D /* CountryListModel.swift */; };
 		CFFE68BA1FF00000005EA93D /* CountryListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68B91FF00000005EA93D /* CountryListInteractorOutput.swift */; };
+		CFFE68BF1FF008F6005EA93D /* CountryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68BE1FF008F6005EA93D /* CountryListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		CF9B7E9F1FEEF9EC008DDA2A /* CountryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListAssembly.swift; sourceTree = "<group>"; };
 		CFFE68B51FEFFE86005EA93D /* CountryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListModel.swift; sourceTree = "<group>"; };
 		CFFE68B91FF00000005EA93D /* CountryListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListInteractorOutput.swift; sourceTree = "<group>"; };
+		CFFE68BE1FF008F6005EA93D /* CountryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				CFFE68BB1FF006EF005EA93D /* Model */,
 				CF9B7E981FEEF466008DDA2A /* Interactor */,
 				CF9B7E971FEEF45F008DDA2A /* Presenter */,
+				CFFE68BD1FF008D7005EA93D /* Router */,
 				CF9B7E961FEEF453008DDA2A /* View */,
 			);
 			path = CountryListModule;
@@ -252,6 +255,14 @@
 				CF9B7E9F1FEEF9EC008DDA2A /* CountryListAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CFFE68BD1FF008D7005EA93D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CFFE68BE1FF008F6005EA93D /* CountryListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				CF64F09F1FEFF5F000E46679 /* CountryModuleInteractor.swift in Sources */,
 				CF64F07B1FEEFD5400E46679 /* Result.swift in Sources */,
 				CF64F09D1FEFF5DC00E46679 /* CountryModuleViewController.swift in Sources */,
+				CFFE68BF1FF008F6005EA93D /* CountryListRouter.swift in Sources */,
 				CF8D8EBF1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift in Sources */,
 				CF64F0981FEFF31100E46679 /* CountryModuleAssembly.swift in Sources */,
 				CFFE68B61FEFFE86005EA93D /* CountryListModel.swift in Sources */,

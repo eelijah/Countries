@@ -9,10 +9,12 @@
 final class CountryListInteractor {
 
     private let countryRepository: CountryRepository
-    var output: CountryListInteractorOutput?
+    private var output: CountryListInteractorOutput?
 
-    init(countryRepository: CountryRepository) {
+    init(countryRepository: CountryRepository,
+         output: CountryListInteractorOutput) {
         self.countryRepository = countryRepository
+        self.output = output
     }
 }
 
