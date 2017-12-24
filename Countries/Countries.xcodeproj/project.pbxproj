@@ -15,10 +15,10 @@
 		CF64F0911FEFEDD500E46679 /* CountryListViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0901FEFEDD500E46679 /* CountryListViewControllerInput.swift */; };
 		CF64F0931FEFEE8D00E46679 /* CountryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0921FEFEE8D00E46679 /* CountryApiService.swift */; };
 		CF64F0951FEFEEBF00E46679 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0941FEFEEBF00E46679 /* CountryRepository.swift */; };
-		CF64F0981FEFF31100E46679 /* CountryModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0971FEFF31100E46679 /* CountryModuleAssembly.swift */; };
-		CF64F09D1FEFF5DC00E46679 /* CountryModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F09C1FEFF5DC00E46679 /* CountryModuleViewController.swift */; };
-		CF64F09F1FEFF5F000E46679 /* CountryModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F09E1FEFF5F000E46679 /* CountryModuleInteractor.swift */; };
-		CF64F0A11FEFF5FF00E46679 /* CountryModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0A01FEFF5FF00E46679 /* CountryModulePresenter.swift */; };
+		CF64F0981FEFF31100E46679 /* ShowCountryModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0971FEFF31100E46679 /* ShowCountryModuleAssembly.swift */; };
+		CF64F09D1FEFF5DC00E46679 /* ShowCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F09C1FEFF5DC00E46679 /* ShowCountryViewController.swift */; };
+		CF64F09F1FEFF5F000E46679 /* ShowCountryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F09E1FEFF5F000E46679 /* ShowCountryInteractor.swift */; };
+		CF64F0A11FEFF5FF00E46679 /* ShowCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64F0A01FEFF5FF00E46679 /* ShowCountryPresenter.swift */; };
 		CF8D8EBF1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D8EBE1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift */; };
 		CF8D8EC21FEEFC1D006A85B2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D8EC11FEEFC1D006A85B2 /* Country.swift */; };
 		CF9B7E7F1FEEF33C008DDA2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B7E7E1FEEF33C008DDA2A /* AppDelegate.swift */; };
@@ -42,10 +42,10 @@
 		CF64F0901FEFEDD500E46679 /* CountryListViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewControllerInput.swift; sourceTree = "<group>"; };
 		CF64F0921FEFEE8D00E46679 /* CountryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApiService.swift; sourceTree = "<group>"; };
 		CF64F0941FEFEEBF00E46679 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
-		CF64F0971FEFF31100E46679 /* CountryModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModuleAssembly.swift; sourceTree = "<group>"; };
-		CF64F09C1FEFF5DC00E46679 /* CountryModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModuleViewController.swift; sourceTree = "<group>"; };
-		CF64F09E1FEFF5F000E46679 /* CountryModuleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModuleInteractor.swift; sourceTree = "<group>"; };
-		CF64F0A01FEFF5FF00E46679 /* CountryModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModulePresenter.swift; sourceTree = "<group>"; };
+		CF64F0971FEFF31100E46679 /* ShowCountryModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCountryModuleAssembly.swift; sourceTree = "<group>"; };
+		CF64F09C1FEFF5DC00E46679 /* ShowCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCountryViewController.swift; sourceTree = "<group>"; };
+		CF64F09E1FEFF5F000E46679 /* ShowCountryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCountryInteractor.swift; sourceTree = "<group>"; };
+		CF64F0A01FEFF5FF00E46679 /* ShowCountryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCountryPresenter.swift; sourceTree = "<group>"; };
 		CF8D8EBE1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApiServiceImpl.swift; sourceTree = "<group>"; };
 		CF8D8EC11FEEFC1D006A85B2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CF9B7E7B1FEEF33C008DDA2A /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,21 +98,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CF64F0961FEFF2F500E46679 /* CountryModule */ = {
+		CF64F0961FEFF2F500E46679 /* ShowCountryModule */ = {
 			isa = PBXGroup;
 			children = (
-				CF64F0971FEFF31100E46679 /* CountryModuleAssembly.swift */,
+				CF64F0971FEFF31100E46679 /* ShowCountryModuleAssembly.swift */,
 				CF64F09A1FEFF5A000E46679 /* Interactor */,
 				CF64F0991FEFF59400E46679 /* Presenter */,
 				CF64F09B1FEFF5A700E46679 /* View */,
 			);
-			path = CountryModule;
+			path = ShowCountryModule;
 			sourceTree = "<group>";
 		};
 		CF64F0991FEFF59400E46679 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				CF64F0A01FEFF5FF00E46679 /* CountryModulePresenter.swift */,
+				CF64F0A01FEFF5FF00E46679 /* ShowCountryPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 		CF64F09A1FEFF5A000E46679 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				CF64F09E1FEFF5F000E46679 /* CountryModuleInteractor.swift */,
+				CF64F09E1FEFF5F000E46679 /* ShowCountryInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 		CF64F09B1FEFF5A700E46679 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CF64F09C1FEFF5DC00E46679 /* CountryModuleViewController.swift */,
+				CF64F09C1FEFF5DC00E46679 /* ShowCountryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 		CF9B7E941FEEF3E5008DDA2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CF64F0961FEFF2F500E46679 /* CountryModule */,
+				CF64F0961FEFF2F500E46679 /* ShowCountryModule */,
 				CF9B7E901FEEF3AF008DDA2A /* CountryListModule */,
 			);
 			path = Modules;
@@ -362,18 +362,18 @@
 				CF9B7E7F1FEEF33C008DDA2A /* AppDelegate.swift in Sources */,
 				CF9B7E9E1FEEF7C4008DDA2A /* CountryListPresenter.swift in Sources */,
 				CF64F0911FEFEDD500E46679 /* CountryListViewControllerInput.swift in Sources */,
-				CF64F0A11FEFF5FF00E46679 /* CountryModulePresenter.swift in Sources */,
+				CF64F0A11FEFF5FF00E46679 /* ShowCountryPresenter.swift in Sources */,
 				CF9B7EA01FEEF9EC008DDA2A /* CountryListAssembly.swift in Sources */,
 				CF64F08F1FEFEDBA00E46679 /* CountryListViewControllerOutput.swift in Sources */,
 				CF9B7E9C1FEEF78F008DDA2A /* CountryListInteractor.swift in Sources */,
 				CF64F0831FEF083400E46679 /* CountryListCell.swift in Sources */,
 				CF9B7E9A1FEEF60C008DDA2A /* CountryListViewController.swift in Sources */,
-				CF64F09F1FEFF5F000E46679 /* CountryModuleInteractor.swift in Sources */,
+				CF64F09F1FEFF5F000E46679 /* ShowCountryInteractor.swift in Sources */,
 				CF64F07B1FEEFD5400E46679 /* Result.swift in Sources */,
-				CF64F09D1FEFF5DC00E46679 /* CountryModuleViewController.swift in Sources */,
+				CF64F09D1FEFF5DC00E46679 /* ShowCountryViewController.swift in Sources */,
 				CFFE68BF1FF008F6005EA93D /* CountryListRouter.swift in Sources */,
 				CF8D8EBF1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift in Sources */,
-				CF64F0981FEFF31100E46679 /* CountryModuleAssembly.swift in Sources */,
+				CF64F0981FEFF31100E46679 /* ShowCountryModuleAssembly.swift in Sources */,
 				CFFE68B61FEFFE86005EA93D /* CountryListModel.swift in Sources */,
 				CF64F0861FEF0F4100E46679 /* CountryRepositoryImpl.swift in Sources */,
 			);

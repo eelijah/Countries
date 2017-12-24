@@ -13,7 +13,7 @@ final class CountryListRouter {
     weak var view: UIViewController?
 
     func showCountry(_ country: Country) {
-        let showCountryViewController = CountryModuleAssembly().module(for: country)
+        let showCountryViewController = ShowCountryModuleAssembly().module(for: country)
         view?.navigationController?.pushViewController(showCountryViewController, animated: true)
     }
 

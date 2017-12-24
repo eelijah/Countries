@@ -1,5 +1,5 @@
 //
-//  CountryModuleViewController.swift
+//  ShowCountryViewController.swift
 //  Countries
 //
 //  Created by Eli Ponkratenko on 24/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CountryModuleViewController: UIViewController {
+final class ShowCountryViewController: UIViewController {
 
     private struct Constraint {
         static let backgroundColor: UIColor = .white
@@ -33,7 +33,7 @@ final class CountryModuleViewController: UIViewController {
     }
 }
 
-extension CountryModuleViewController: UITableViewDataSource {
+extension ShowCountryViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -45,6 +45,6 @@ extension CountryModuleViewController: UITableViewDataSource {
 
 }
 
-extension CountryModuleViewController: UITableViewDelegate {
+extension ShowCountryViewController: UITableViewDelegate {
 
 }
