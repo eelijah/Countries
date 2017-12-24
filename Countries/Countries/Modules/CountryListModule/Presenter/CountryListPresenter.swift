@@ -16,19 +16,18 @@ final class CountryListPresenter {
 
 extension CountryListPresenter: CountryListInteractorOutput {
 
-    func didObtainCountryList(_ list: [Country]) {
-        var cellViewModels = [CountryListCellViewModel]()
-        list.forEach { country in
-            cellViewModels.append(
-                CountryListCellViewModel(
-                    name: country.name,
-                    code: country.code
-                )
+    func didObtainCountries(response: CountryListModel.Obtain.Response) {
+        let cellModels = response.countries.map { country in
+            return CountryListModel.Obtain.ViewModel.CellViewModel(
+                name: country.name,
+                code: country.code
             )
         }
         DispatchQueue.main.async { [weak view] in
-            view?.showCountryList(with:
-                CountryListTableViewModel(cellModels: cellViewModels)
+            view?.showCountries(
+                viewModel: CountryListModel.Obtain.ViewModel(
+                    cellModels: cellModels
+                )
             )
         }
     }

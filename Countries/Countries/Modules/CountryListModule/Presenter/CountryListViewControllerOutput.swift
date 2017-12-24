@@ -8,6 +8,6 @@
 
 protocol CountryListViewControllerOutput {
 
-    func obtainCountriesList()
+    func obtainCountriesList(request: CountryListModel.Obtain.Request)
     
 }

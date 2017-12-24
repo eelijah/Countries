@@ -6,11 +6,6 @@
 //  Copyright © 2017 Eli Ponkratenko. All rights reserved.
 //
 
-protocol CountryListInteractorOutput: class {
-    func didObtainCountryList(_ list: [Country])
-    func failedObtainCountryList(error: Error)
-}
-
 final class CountryListInteractor {
 
     private let countryRepository: CountryRepository
@@ -23,11 +18,15 @@ final class CountryListInteractor {
 
 extension CountryListInteractor: CountryListViewControllerOutput {
 
-    func obtainCountriesList() {
+    func obtainCountriesList(request: CountryListModel.Obtain.Request) {
         countryRepository.obtainCountries { [weak output] (result) in
             switch result {
             case .success(let countries):
-                output?.didObtainCountryList(countries)
+                output?.didObtainCountries(
+                    response: CountryListModel.Obtain.Response(
+                        countries: countries
+                    )
+                )
             case .failure(let error):
                 output?.failedObtainCountryList(error: error)
             }

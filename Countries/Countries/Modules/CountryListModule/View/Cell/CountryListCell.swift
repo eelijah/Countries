@@ -70,7 +70,7 @@ class CountryListCell: UITableViewCell {
         codeLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
     }
 
-    func update(with model: CountryListCellViewModel) {
+    func update(with model: CountryListModel.Obtain.ViewModel.CellViewModel) {
         nameLabel.text = model.name
         codeLabel.text = model.code
     }

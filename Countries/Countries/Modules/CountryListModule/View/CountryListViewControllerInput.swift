@@ -8,7 +8,7 @@
 
 protocol CountryListViewControllerInput: class {
 
-    func showCountryList(with: CountryListTableViewModel)
+    func showCountries(viewModel: CountryListModel.Obtain.ViewModel)
     func showErrorAlert(message: String)
     
 }

@@ -22,8 +22,8 @@ final class CountryListViewController: UIViewController {
 
     private let searchController = UISearchController(searchResultsController: nil)
     private let tableView = UITableView(frame: .zero, style: .plain)
-    private var viewModels: [CountryListCellViewModel]?
-    private var filtredViewModels: [CountryListCellViewModel]?
+    private var viewModels: [CountryListModel.Obtain.ViewModel.CellViewModel]?
+    private var filtredViewModels: [CountryListModel.Obtain.ViewModel.CellViewModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ final class CountryListViewController: UIViewController {
         setupTableView()
         registerCells()
         setupSearchController()
-        output?.obtainCountriesList()
+        output?.obtainCountriesList(request: CountryListModel.Obtain.Request())
     }
 
     private func setupTableView() {
@@ -70,8 +70,8 @@ final class CountryListViewController: UIViewController {
 
 extension CountryListViewController: CountryListViewControllerInput {
 
-    func showCountryList(with listViewModel: CountryListTableViewModel) {
-        self.viewModels = listViewModel.cellModels
+    func showCountries(viewModel: CountryListModel.Obtain.ViewModel) {
+        self.viewModels = viewModel.cellModels
         tableView.reloadData()
     }
 
