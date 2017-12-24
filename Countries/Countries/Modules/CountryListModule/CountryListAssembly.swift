@@ -13,7 +13,7 @@ final class CountryListAssembly {
     func module() -> UIViewController {
         let interactor = CountryListInteractor(
             countryRepository: CountryRepositoryImpl(
-                countryListApi: CountryListApiServiceImpl()
+                countryApiService: CountryApiServiceImpl()
             )
         )
         let presenter = CountryListPresenter()

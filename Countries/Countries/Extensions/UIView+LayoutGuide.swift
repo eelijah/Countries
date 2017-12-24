@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
 
-    func pinViewToSuperviewEdges() {
+    func pinViewToSuperviewMarginEdges() {
         guard let superview = superview else {
             fatalError("Miss a superview for \(self)")
         }

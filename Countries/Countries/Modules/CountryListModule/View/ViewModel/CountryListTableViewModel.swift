@@ -1,5 +1,5 @@
 //
-//  CountryListViewModel.swift
+//  CountryListTableViewModel.swift
 //  Countries
 //
 //  Created by Eli Ponkratenko on 24/12/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CountryListViewModel {
+final class CountryListTableViewModel {
 
     let cellModels: [CountryListCellViewModel]
 

@@ -8,15 +8,6 @@
 
 import UIKit
 
-protocol CountryListViewControllerOutput {
-    func obtainCountriesList()
-}
-
-protocol CountryListViewControllerInput: class {
-    func showCountryList(with: CountryListViewModel)
-    func showErrorAlert(message: String)
-}
-
 final class CountryListViewController: UIViewController {
 
     private struct Constraint {
@@ -30,7 +21,7 @@ final class CountryListViewController: UIViewController {
     var output: CountryListViewControllerOutput?
 
     private let searchController = UISearchController(searchResultsController: nil)
-    private var tableView: UITableView?
+    private let tableView = UITableView(frame: .zero, style: .plain)
     private var viewModels: [CountryListCellViewModel]?
     private var filtredViewModels: [CountryListCellViewModel]?
 
@@ -46,21 +37,19 @@ final class CountryListViewController: UIViewController {
     }
 
     private func setupTableView() {
-        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = Constraint.TableView.rowHieght
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
-        self.tableView = tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        tableView.pinViewToSuperviewEdges()
+        tableView.pinViewToSuperviewMarginEdges()
     }
 
     private func registerCells() {
-        tableView?.register(CountryListCell.self, forCellReuseIdentifier: CountryListCell.identifier)
+        tableView.register(CountryListCell.self, forCellReuseIdentifier: CountryListCell.identifier)
     }
 
     private func setupSearchController() {
@@ -80,24 +69,11 @@ final class CountryListViewController: UIViewController {
 
 }
 
-extension CountryListViewController: UISearchResultsUpdating {
-
-    func updateSearchResults(for searchController: UISearchController) {
-        if let text = searchController.searchBar.text, !text.isEmpty {
-            filtredViewModels = viewModels?.filter {
-                $0.name.lowercased().contains(text.lowercased())
-            }
-        }
-        tableView?.reloadData()
-    }
-
-}
-
 extension CountryListViewController: CountryListViewControllerInput {
 
-    func showCountryList(with listViewModel: CountryListViewModel) {
+    func showCountryList(with listViewModel: CountryListTableViewModel) {
         self.viewModels = listViewModel.cellModels
-        tableView?.reloadData()
+        tableView.reloadData()
     }
 
     func showErrorAlert(message: String) {
@@ -129,6 +105,19 @@ extension CountryListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+    }
+
+}
+
+extension CountryListViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            filtredViewModels = viewModels?.filter {
+                $0.name.lowercased().contains(text.lowercased())
+            }
+        }
+        tableView.reloadData()
     }
 
 }

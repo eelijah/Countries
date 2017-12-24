@@ -11,30 +11,3 @@ protocol CountryRepository {
     func obtainCountries(completion: @escaping (Result<[Country]>) -> Void)
 
 }
-
-final class CountryRepositoryImpl {
-
-    private let countryListApi: CountryListApiService
-    private var countryStore: [Country]?
-
-    init(countryListApi: CountryListApiService) {
-        self.countryListApi = countryListApi
-    }
-}
-
-extension CountryRepositoryImpl: CountryRepository {
-
-    func obtainCountries(completion: @escaping (Result<[Country]>) -> Void) {
-        if let existedCountries = countryStore, !existedCountries.isEmpty  {
-            completion(.success(existedCountries))
-            return
-        }
-        countryListApi.fetchCountries { [weak self] result in
-            if case .success(let countryList) = result {
-                self?.countryStore = countryList
-            }
-            completion(result)
-        }
-    }
-
-}

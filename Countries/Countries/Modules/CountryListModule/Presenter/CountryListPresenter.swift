@@ -28,7 +28,7 @@ extension CountryListPresenter: CountryListInteractorOutput {
         }
         DispatchQueue.main.async { [weak view] in
             view?.showCountryList(with:
-                CountryListViewModel(cellModels: cellViewModels)
+                CountryListTableViewModel(cellModels: cellViewModels)
             )
         }
     }
