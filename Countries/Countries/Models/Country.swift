@@ -6,21 +6,27 @@
 //  Copyright © 2017 Eli Ponkratenko. All rights reserved.
 //
 
+import Foundation
+
 struct Country: Decodable {
 
     let name: String
     let code: String
-    let borders: [String]
-    let population: Int
     let capital: String
+    let borders: [String]
     let area: Double?
+    let region: String
+    let population: Int
+    let flag: URL
 
     enum CodingKeys : String, CodingKey {
         case name
         case code = "alpha3Code"
         case borders
-        case population
         case capital
         case area
+        case region
+        case population
+        case flag
     }
 }

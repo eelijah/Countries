@@ -31,6 +31,7 @@
 		CFFE68B61FEFFE86005EA93D /* CountryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68B51FEFFE86005EA93D /* CountryListModel.swift */; };
 		CFFE68BA1FF00000005EA93D /* CountryListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68B91FF00000005EA93D /* CountryListInteractorOutput.swift */; };
 		CFFE68BF1FF008F6005EA93D /* CountryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68BE1FF008F6005EA93D /* CountryListRouter.swift */; };
+		CFFE68C51FF04B19005EA93D /* ShowCountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE68C41FF04B19005EA93D /* ShowCountryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		CFFE68B51FEFFE86005EA93D /* CountryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListModel.swift; sourceTree = "<group>"; };
 		CFFE68B91FF00000005EA93D /* CountryListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListInteractorOutput.swift; sourceTree = "<group>"; };
 		CFFE68BE1FF008F6005EA93D /* CountryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRouter.swift; sourceTree = "<group>"; };
+		CFFE68C41FF04B19005EA93D /* ShowCountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				CF64F0971FEFF31100E46679 /* ShowCountryModuleAssembly.swift */,
+				CFFE68C31FF04B10005EA93D /* Model */,
 				CF64F09A1FEFF5A000E46679 /* Interactor */,
 				CF64F0991FEFF59400E46679 /* Presenter */,
 				CF64F09B1FEFF5A700E46679 /* View */,
@@ -265,6 +268,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		CFFE68C31FF04B10005EA93D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFFE68C41FF04B19005EA93D /* ShowCountryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,6 +386,7 @@
 				CF8D8EBF1FEEFBD3006A85B2 /* CountryApiServiceImpl.swift in Sources */,
 				CF64F0981FEFF31100E46679 /* ShowCountryModuleAssembly.swift in Sources */,
 				CFFE68B61FEFFE86005EA93D /* CountryListModel.swift in Sources */,
+				CFFE68C51FF04B19005EA93D /* ShowCountryModel.swift in Sources */,
 				CF64F0861FEF0F4100E46679 /* CountryRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

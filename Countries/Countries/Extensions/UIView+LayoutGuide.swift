@@ -10,14 +10,11 @@ import UIKit
 
 extension UIView {
 
-    func pinViewToSuperviewMarginEdges() {
+    func pinToSuperviewMarginEdges() {
         guard let superview = superview else {
             fatalError("Miss a superview for \(self)")
         }
-        var guide = superview.layoutMarginsGuide
-        if #available(iOS 11, *) {
-            guide = superview.safeAreaLayoutGuide
-        }
+        let guide = superview.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: guide.topAnchor),
             leadingAnchor.constraint(equalTo: guide.leadingAnchor),

@@ -9,7 +9,7 @@
 final class CountryRepositoryImpl {
 
     private let countryApiService: CountryApiService
-    private var countryStore: [Country]?
+    private var countryStore = [String: Country]()
 
     init(countryApiService: CountryApiService) {
         self.countryApiService = countryApiService
@@ -19,15 +19,27 @@ final class CountryRepositoryImpl {
 extension CountryRepositoryImpl: CountryRepository {
 
     func obtainCountries(completion: @escaping (Result<[Country]>) -> Void) {
-        if let fetchedCountries = countryStore, !fetchedCountries.isEmpty  {
-            completion(.success(fetchedCountries))
+        let storedCountries = countryStore.values
+        if !storedCountries.isEmpty  {
+            completion(.success(Array(storedCountries)))
             return
         }
         countryApiService.fetchAllCountries { [weak self] result in
             if case .success(let countryList) = result {
-                self?.countryStore = countryList
+                countryList.forEach { country in
+                    self?.countryStore[country.code] = country
+                }
             }
             completion(result)
+        }
+    }
+
+    func getBorders(for country: Country) -> [Country] {
+        return countryStore.flatMap { (key, value) in
+            guard country.code == key else {
+                return nil
+            }
+            return value
         }
     }
 

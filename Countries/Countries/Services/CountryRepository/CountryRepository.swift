@@ -9,5 +9,6 @@
 protocol CountryRepository {
 
     func obtainCountries(completion: @escaping (Result<[Country]>) -> Void)
+    func getBorders(for: Country) -> [Country]
 
 }

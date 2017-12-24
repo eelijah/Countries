@@ -10,10 +10,19 @@ import UIKit
 
 final class ShowCountryModuleAssembly {
 
-    func module(for: Country) -> UIViewController {
-        let interactor = ShowCountryInteractor()
+    func module(for country: Country) -> UIViewController {
         let presenter = ShowCountryPresenter()
-        let view = ShowCountryViewController(nibName: nil, bundle: nil)
+        let interactor = ShowCountryInteractor(
+            countryRepository: CountryRepositoryImpl(
+                countryApiService: CountryApiServiceImpl()
+            ),
+            output: presenter
+        )
+        let view = ShowCountryViewController(
+            output: interactor,
+            country: country
+        )
+        presenter.view = view
         return view
     }
 

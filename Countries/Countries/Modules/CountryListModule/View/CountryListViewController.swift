@@ -55,7 +55,7 @@ final class CountryListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
-        tableView.pinViewToSuperviewMarginEdges()
+        tableView.pinToSuperviewMarginEdges()
     }
 
     private func registerCells() {
@@ -87,7 +87,10 @@ extension CountryListViewController: CountryListViewControllerInput {
     }
 
     func showErrorAlert(message: String) {
-        // show alert with an error message
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        showDetailViewController(alertController, sender: nil)
     }
 
 }
@@ -99,14 +102,14 @@ extension CountryListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellModel = (isFiltering ? filtredViewModels : viewModels)?[indexPath.row] else {
+        guard
+            let cellModel = (isFiltering ? filtredViewModels : viewModels)?[indexPath.row],
+            let cell = tableView.dequeueReusableCell(withIdentifier: CountryListCell.identifier, for: indexPath) as? CountryListCell
+        else {
             return UITableViewCell()
         }
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CountryListCell.identifier, for: indexPath) as? CountryListCell {
-            cell.update(with: cellModel)
-            return cell
-        }
-        return UITableViewCell()
+        cell.update(with: cellModel)
+        return cell
     }
 
 }
