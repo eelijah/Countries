@@ -38,12 +38,11 @@ final class CountryListViewController: UIViewController {
 
     private func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.estimatedRowHeight = Constraint.TableView.rowHieght
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(tableView)
         tableView.pinViewToSuperviewMarginEdges()
     }
