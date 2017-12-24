@@ -40,6 +40,8 @@ class CountryListCell: UITableViewCell {
     }
 
     private func setupNameLabel() {
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.numberOfLines = 0
         nameLabel.backgroundColor = Constants.backgroundColor
@@ -51,6 +53,8 @@ class CountryListCell: UITableViewCell {
     }
 
     private func setupCodeLabel() {
+        codeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        codeLabel.adjustsFontForContentSizeCategory = true
         codeLabel.translatesAutoresizingMaskIntoConstraints = false
         codeLabel.backgroundColor = Constants.backgroundColor
         contentView.addSubview(codeLabel)
