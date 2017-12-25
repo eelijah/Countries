@@ -29,6 +29,16 @@ final class ShowCountryViewController: UIViewController {
     private let descriptionLabel = UILabel()
     private let flagView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
     private let bordersLabel = UILabel()
+    private lazy var numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+    private lazy var measurementFormatter: MeasurementFormatter = {
+        let formatter = MeasurementFormatter()
+        formatter.numberFormatter = self.numberFormatter
+        return formatter
+    }()
 
     init(output: ShowCountryViewControllerOutput,
          country: Country) {
@@ -109,19 +119,13 @@ final class ShowCountryViewController: UIViewController {
         bordersLabel.text = "Borders:\n" + viewModel.borders.joined(separator: "\n")
     }
 
-    private func formatePopulation(_ population: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: population))!
-    }
-
     private func updateDescriptionLable(with viewModel: ShowCountryModel.Obtain.ViewModel) {
         descriptionLabel.text = """
         \(viewModel.name)
         Capital: \(viewModel.capital)
         Region: \(viewModel.region)
-        Area: \(viewModel.area)
-        Population: \(formatePopulation(viewModel.population))
+        Area: \(measurementFormatter.string(from: viewModel.area))
+        Population: \(numberFormatter.string(from: NSNumber(value: viewModel.population))!)
         """
     }
 }
