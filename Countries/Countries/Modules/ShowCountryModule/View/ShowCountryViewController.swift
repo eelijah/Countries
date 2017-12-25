@@ -121,13 +121,19 @@ final class ShowCountryViewController: UIViewController {
         bordersLabel.text = "Borders:\n" + viewModel.borders.joined(separator: "\n")
     }
 
+    private func formatePopulation(_ population: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: population))!
+    }
+
     private func updateDescriptionLable(with viewModel: ShowCountryModel.Obtain.ViewModel) {
         descriptionLabel.text = """
         \(viewModel.name)
         Capital: \(viewModel.capital)
         Region: \(viewModel.region)
-        Area: \(String(describing: viewModel.area))
-        Population: \(viewModel.population)
+        Area: \(viewModel.area)
+        Population: \(formatePopulation(viewModel.population))
         """
     }
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Eli Ponkratenko. All rights reserved.
 //
 
+import Foundation
+
 final class ShowCountryPresenter {
 
     weak var view: ShowCountryViewControllerInput?
@@ -19,7 +21,7 @@ extension ShowCountryPresenter: ShowCountryInteractorOutput {
             ShowCountryModel.Obtain.ViewModel(
                 name: response.country.name,
                 capital: response.country.capital,
-                area: response.country.area,
+                area: Measurement(value: response.country.area ?? 0, unit: UnitArea.squareKilometers),
                 region: response.country.region,
                 population: response.country.population,
                 borders: response.borders.map {

@@ -24,7 +24,7 @@ struct ShowCountryModel {
         struct ViewModel {
             let name: String
             let capital: String
-            let area: Double?
+            let area: Measurement<UnitArea>
             let region: String
             let population: Int
             let borders: [String]
