@@ -9,18 +9,6 @@
 import UIKit
 import WebKit
 
-protocol ShowCountryViewControllerOutput {
-
-    func getCountry(request: ShowCountryModel.Obtain.Request)
-
-}
-
-protocol ShowCountryViewControllerInput: class {
-
-    func showCountry(viewModel: ShowCountryModel.Obtain.ViewModel)
-
-}
-
 final class ShowCountryViewController: UIViewController {
 
     private struct Constraint {
@@ -144,7 +132,6 @@ extension ShowCountryViewController: ShowCountryViewControllerInput {
         updateFlagView(with: viewModel)
         updateBorderLabel(with: viewModel)
         updateDescriptionLable(with: viewModel)
-        view.setNeedsUpdateConstraints()
     }
 
 }
