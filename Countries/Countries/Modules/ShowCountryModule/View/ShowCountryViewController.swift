@@ -105,9 +105,7 @@ final class ShowCountryViewController: UIViewController {
             bordersLabel.text = "The country has no borders."
             return
         }
-        bordersLabel.text = viewModel.borders.reduce("Borders:\n", { (result, newValue) in
-            return result + "\(newValue)\n"
-        })
+        bordersLabel.text = "Borders:\n" + viewModel.borders.joined(separator: "\n")
     }
 
     private func updateDescriptionLable(with viewModel: ShowCountryModel.Obtain.ViewModel) {

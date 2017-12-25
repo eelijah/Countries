@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class CountryListRouter {
+final class CountryListRouter: CommonRouter {
 
     weak var view: UIViewController?
 
     func showCountry(_ country: Country) {
-        let showCountryViewController = ShowCountryModuleAssembly().module(for: country)
+        let showCountryViewController = ShowCountryModuleAssembly(serviceFactory: serviceFactory).module(for: country)
         view?.navigationController?.pushViewController(showCountryViewController, animated: true)
     }
 

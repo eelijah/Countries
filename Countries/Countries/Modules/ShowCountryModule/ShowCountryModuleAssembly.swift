@@ -8,14 +8,12 @@
 
 import UIKit
 
-final class ShowCountryModuleAssembly {
+final class ShowCountryModuleAssembly: CommonAssembly {
 
     func module(for country: Country) -> UIViewController {
         let presenter = ShowCountryPresenter()
         let interactor = ShowCountryInteractor(
-            countryRepository: CountryRepositoryImpl(
-                countryApiService: CountryApiServiceImpl()
-            ),
+            countryRepository: serviceFactory.countryRepository(),
             output: presenter
         )
         let view = ShowCountryViewController(

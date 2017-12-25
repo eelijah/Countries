@@ -35,11 +35,8 @@ extension CountryRepositoryImpl: CountryRepository {
     }
 
     func getBorders(for country: Country) -> [Country] {
-        return countryStore.flatMap { (key, value) in
-            guard country.code == key else {
-                return nil
-            }
-            return value
+        return country.borders.flatMap {
+            return countryStore[$0]
         }
     }
 
