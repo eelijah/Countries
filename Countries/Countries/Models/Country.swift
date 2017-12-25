@@ -18,6 +18,7 @@ struct Country: Decodable {
     let region: String
     let population: Int
     let flag: URL
+    let nativeName: String
 
     enum CodingKeys : String, CodingKey {
         case name
@@ -28,5 +29,6 @@ struct Country: Decodable {
         case region
         case population
         case flag
+        case nativeName
     }
 }

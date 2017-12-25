@@ -39,7 +39,7 @@ final class CountryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constraint.backgroundColor
-        title = Constraint.title
+        navigationItem.title = Constraint.title
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
         registerCells()

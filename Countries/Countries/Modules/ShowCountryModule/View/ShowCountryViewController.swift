@@ -25,6 +25,15 @@ final class ShowCountryViewController: UIViewController {
 
     private struct Constraint {
         static let backgroundColor: UIColor = .white
+        struct DescriptionLabel {
+            static let inset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        }
+        struct BordersLabel {
+            static let inset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        }
+        struct FlagView {
+            static let inset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        }
     }
 
     private let output: ShowCountryViewControllerOutput
@@ -47,6 +56,7 @@ final class ShowCountryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constraint.backgroundColor
+        navigationItem.title = country.nativeName
         output.getCountry(request:
             ShowCountryModel.Obtain.Request(
                 country: country
@@ -64,7 +74,8 @@ final class ShowCountryViewController: UIViewController {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor,
+                                                  constant: Constraint.DescriptionLabel.inset.top),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
             ])
@@ -77,7 +88,8 @@ final class ShowCountryViewController: UIViewController {
         bordersLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bordersLabel)
         NSLayoutConstraint.activate([
-            bordersLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+            bordersLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor,
+                                              constant: Constraint.BordersLabel.inset.top),
             bordersLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             bordersLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
             ])
@@ -88,7 +100,8 @@ final class ShowCountryViewController: UIViewController {
         flagView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(flagView)
         NSLayoutConstraint.activate([
-            flagView.topAnchor.constraint(equalTo: bordersLabel.bottomAnchor, constant: 10),
+            flagView.topAnchor.constraint(equalTo: bordersLabel.bottomAnchor,
+                                          constant: Constraint.FlagView.inset.top),
             flagView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             flagView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             flagView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
